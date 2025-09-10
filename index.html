@@ -2,39 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>All-in-One HTML Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tehran Blog</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #283048, #859398);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.4);
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        main {
+            margin-top: 40px;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #e68900;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 5px;
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Life in Tehran</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#culture">Culture</a></li>
-                <li><a href="#food">Food</a></li>
-                <li><a href="#travel">Travel</a></li>
-            </ul>
-        </nav>
+        🌟 All-in-One HTML Page
     </header>
 
     <main>
-        <section id="home">
-            <h2>Welcome to Tehran</h2>
-            <p>Tehran, the vibrant capital of Iran, blends tradition with modernity. From its bustling bazaars to its towering skyscrapers, every street has a story to tell.</p>
-            <img src="tehran.jpg" alt="Tehran skyline">
-        </section>
+        <h2>Click the Button to See Magic!</h2>
+        <p>This is an example of a complete HTML page with CSS and JavaScript in one file.</p>
+        <button onclick="showMessage()">Click Me</button>
+        <div class="output" id="outputArea">Your message will appear here.</div>
+    </main>
 
-        <section id="culture">
-            <h2>Culture</h2>
-            <p>Tehran is the cultural heartbeat of Iran, home to numerous museums, art galleries, and theaters. Persian traditions live on through music, poetry, and celebrations.</p>
-        </section>
+    <footer>
+        &copy; 2025 All-in-One Example
+    </footer>
 
-        <section id="food">
-            <h2>Food</h2>
-            <p>From mouth-watering kebabs to saffron-infused stews, Tehran offers a paradise for food lovers. Don’t miss the chance to try street food at Tajrish Bazaar.</p>
-        </section>
+    <!-- Internal JavaScript -->
+    <script>
+        function showMessage() {
+            const output = document.getElementById("outputArea");
+            const messages = [
+                "Hello there! 👋",
+                "You clicked the button! 🎉",
+                "Have an amazing day! 🌞",
+                "Keep coding! 💻"
+            ];
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            output.textContent = messages[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
 
         <section id="travel">
             <h2>Travel Tips</h2>
