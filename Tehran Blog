@@ -1,0 +1,51 @@
+ents.map(c => `<div class="comment">${c}</div>`).join('')}
+          </div>
+          <div class="comment-box">
+            <input type="text" id="user-comment-${index}" placeholder="نظر خود را بنویسید...">
+            <button onclick="addUserComment(${index})">ارسال نظر</button>
+          </div>
+        `;
+        postsDiv.appendChild(div);
+      });
+    }
+
+    // اضافه کردن پست جدید
+    function addPost() {
+      const title = document.getElementById('title').value;
+      const content = document.getElementById('content').value;
+      if (!title || !content) return;
+
+      const date = new Date().toLocaleDateString('fa-IR');
+      const newPost = { title, content, date, comments: [] };
+
+      userPosts.unshift(newPost); // اضافه به اول لیست کاربر
+      localStorage.setItem('userPosts', JSON.stringify(userPosts));
+      document.getElementById('title').value = '';
+      document.getElementById('content').value = '';
+      renderPosts();
+    }
+
+    // اضافه کردن کامنت به پست‌های قفل
+    function addLockedComment(index) {
+      const input = document.getElementById(`locked-comment-${index}`);
+      if (!input.value) return;
+      lockedPosts[index].comments.push(input.value);
+      input.value = '';
+      renderPosts();
+    }
+
+    // اضافه کردن کامنت به پست‌های کاربر
+    function addUserComment(index) {
+      const input = document.getElementById(`user-comment-${index}`);
+      if (!input.value) return;
+      userPosts[index].comments.push(input.value);
+      localStorage.setItem('userPosts', JSON.stringify(userPosts));
+      input.value = '';
+      renderPosts();
+    }
+
+    // بارگزاری اولیه
+    renderPosts();
+  </script>
+</body>
+</html>
