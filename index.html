@@ -1,51 +1,55 @@
-ents.map(c => `<div class="comment">${c}</div>`).join('')}
-          </div>
-          <div class="comment-box">
-            <input type="text" id="user-comment-${index}" placeholder="نظر خود را بنویسید...">
-            <button onclick="addUserComment(${index})">ارسال نظر</button>
-          </div>
-        `;
-        postsDiv.appendChild(div);
-      });
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehran Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Life in Tehran</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#travel">Travel</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    // اضافه کردن پست جدید
-    function addPost() {
-      const title = document.getElementById('title').value;
-      const content = document.getElementById('content').value;
-      if (!title || !content) return;
+    <main>
+        <section id="home">
+            <h2>Welcome to Tehran</h2>
+            <p>Tehran, the vibrant capital of Iran, blends tradition with modernity. From its bustling bazaars to its towering skyscrapers, every street has a story to tell.</p>
+            <img src="tehran.jpg" alt="Tehran skyline">
+        </section>
 
-      const date = new Date().toLocaleDateString('fa-IR');
-      const newPost = { title, content, date, comments: [] };
+        <section id="culture">
+            <h2>Culture</h2>
+            <p>Tehran is the cultural heartbeat of Iran, home to numerous museums, art galleries, and theaters. Persian traditions live on through music, poetry, and celebrations.</p>
+        </section>
 
-      userPosts.unshift(newPost); // اضافه به اول لیست کاربر
-      localStorage.setItem('userPosts', JSON.stringify(userPosts));
-      document.getElementById('title').value = '';
-      document.getElementById('content').value = '';
-      renderPosts();
-    }
+        <section id="food">
+            <h2>Food</h2>
+            <p>From mouth-watering kebabs to saffron-infused stews, Tehran offers a paradise for food lovers. Don’t miss the chance to try street food at Tajrish Bazaar.</p>
+        </section>
 
-    // اضافه کردن کامنت به پست‌های قفل
-    function addLockedComment(index) {
-      const input = document.getElementById(`locked-comment-${index}`);
-      if (!input.value) return;
-      lockedPosts[index].comments.push(input.value);
-      input.value = '';
-      renderPosts();
-    }
+        <section id="travel">
+            <h2>Travel Tips</h2>
+            <ul>
+                <li>Best time to visit: Spring and Autumn</li>
+                <li>Always carry cash for smaller shops</li>
+                <li>Public transport is efficient and cheap</li>
+            </ul>
+        </section>
+    </main>
 
-    // اضافه کردن کامنت به پست‌های کاربر
-    function addUserComment(index) {
-      const input = document.getElementById(`user-comment-${index}`);
-      if (!input.value) return;
-      userPosts[index].comments.push(input.value);
-      localStorage.setItem('userPosts', JSON.stringify(userPosts));
-      input.value = '';
-      renderPosts();
-    }
+    <footer>
+        <p>&copy; 2025 Tehran Blog | Designed with ❤️</p>
+    </footer>
 
-    // بارگزاری اولیه
-    renderPosts();
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
