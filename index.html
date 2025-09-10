@@ -1,122 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>All-in-One HTML Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Internal CSS -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #283048, #859398);
-            color: white;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            background-color: rgba(0, 0, 0, 0.4);
-            width: 100%;
-            padding: 20px;
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-        }
-
-        main {
-            margin-top: 40px;
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #ff9800;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background-color: #e68900;
-        }
-
-        .output {
-            margin-top: 20px;
-            padding: 10px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 5px;
-        }
-
-        footer {
-            margin-top: auto;
-            background-color: rgba(0,0,0,0.4);
-            padding: 15px;
-            width: 100%;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A professional blog design without images">
+  <title>My Pro Styled Blog</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">MyProBlog</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <header>
-        🌟 All-in-One HTML Page
-    </header>
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Blog Posts -->
+    <section class="posts">
+      <article class="post">
+        <h2 class="post-title">The Future of Web Development</h2>
+        <p class="post-meta">By Jane Doe | September 10, 2025</p>
+        <p>
+          Web development has evolved dramatically over the past decade. New frameworks, faster performance, and better user experiences define the modern web...
+        </p>
+        <button class="read-more">Read More</button>
+      </article>
 
-    <main>
-        <h2>Click the Button to See Magic!</h2>
-        <p>This is an example of a complete HTML page with CSS and JavaScript in one file.</p>
-        <button onclick="showMessage()">Click Me</button>
-        <div class="output" id="outputArea">Your message will appear here.</div>
-    </main>
+      <article class="post">
+        <h2 class="post-title">Mastering Productivity in Tech</h2>
+        <p class="post-meta">By John Smith | September 8, 2025</p>
+        <p>
+          Productivity is more than just time management—it’s about working smarter with tools, methodologies, and strategies that maximize your output...
+        </p>
+        <button class="read-more">Read More</button>
+      </article>
 
-    <footer>
-        &copy; 2025 All-in-One Example
-    </footer>
+      <article class="post">
+        <h2 class="post-title">Why Minimalism Works in UI Design</h2>
+        <p class="post-meta">By Sarah Lee | September 5, 2025</p>
+        <p>
+          Minimalism in design focuses on clarity, usability, and reducing distractions. In a busy digital world, it’s a breath of fresh air...
+        </p>
+        <button class="read-more">Read More</button>
+      </article>
+    </section>
 
-    <!-- Internal JavaScript -->
-    <script>
-        function showMessage() {
-            const output = document.getElementById("outputArea");
-            const messages = [
-                "Hello there! 👋",
-                "You clicked the button! 🎉",
-                "Have an amazing day! 🌞",
-                "Keep coding! 💻"
-            ];
-            const randomIndex = Math.floor(Math.random() * messages.length);
-            output.textContent = messages[randomIndex];
-        }
-    </script>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>About This Blog</h3>
+      <p>
+        Welcome to MyProBlog! Here, we share insights, trends, and tips from the world of tech, design, and productivity.
+      </p>
 
-</body>
-</html>
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">UI/UX Design</a></li>
+        <li><a href="#">Productivity</a></li>
+        <li><a href="#">Startups</a></li>
+      </ul>
 
-        <section id="travel">
-            <h2>Travel Tips</h2>
-            <ul>
-                <li>Best time to visit: Spring and Autumn</li>
-                <li>Always carry cash for smaller shops</li>
-                <li>Public transport is efficient and cheap</li>
-            </ul>
-        </section>
-    </main>
+      <h3>Recent Posts</h3>
+      <ul>
+        <li><a href="#">5 JavaScript Tips You Need Now</a></li>
+        <li><a href="#">The Rise of No-Code Tools</a></li>
+        <li><a href="#">Remote Work Best Practices</a></li>
+      </ul>
+    </aside>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Tehran Blog | Designed with ❤️</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MyProBlog. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
